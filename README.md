@@ -2,7 +2,7 @@
 
 Welcome to the Bytewise-Fellowship repository! This project focuses on learning and practicing React.js and Next.js.
 
-## Daily Tasks
+## Week-1( Daily Tasks )
 
 ### Day-01 / Task-01
 - **Task**: Refresh HTML, CSS and Javascript.
