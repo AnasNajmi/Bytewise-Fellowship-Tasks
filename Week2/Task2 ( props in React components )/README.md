@@ -60,5 +60,8 @@ ChildComponent.propTypes = {
 };
 
 ```
+## Pratice Task of Props
+
+(screencapture-localhost-5173-2024-06-23-10_58_38 (3))
 
 
