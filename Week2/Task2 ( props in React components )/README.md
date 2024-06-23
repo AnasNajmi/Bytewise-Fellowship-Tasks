@@ -62,6 +62,6 @@ ChildComponent.propTypes = {
 ```
 ## Pratice Task of Props
 
-(screencapture-localhost-5173-2024-06-23-10_58_38 (3))
+![screencapture-localhost-5173-2024-06-23-10_58_38 (2)](https://github.com/AnasNajmi/Bytewise-Fellowship-Tasks/assets/127054270/c0d8ea71-882e-4030-9131-d64d3dcdc33e)
 
 
