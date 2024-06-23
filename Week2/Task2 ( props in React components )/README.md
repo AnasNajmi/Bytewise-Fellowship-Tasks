@@ -1,67 +1,64 @@
-# React + Vite
+# Task02 : Learn about props in React components, how they are passed.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This document outlines the key concepts related to props in React components, including how they are passed and utilized within a React application. This was a task assigned during my internship, which I have successfully completed.
 
-Currently, two official plugins are available:
+## What are Props?
+* Props, short for properties, are a mechanism for passing data from parent to child components in React. They are a core concept of React and play a crucial role in creating dynamic and reusable components.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Passing Props
+Props are passed to components similarly to how attributes are passed to HTML elements. Here’s an example:
 
 ```
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import './index.css'
+// ParentComponent.js
+import React from 'react';
+import ChildComponent from './ChildComponent';
 
-function App() {
-  let [counter , setCounter] = useState(1)
-  const Addvalue=() =>{  
-    if(counter === 20){
-
-      alert("Max value reached");
-
-    }else{
-      setCounter(counter+1);
-      setCounter(preCounter => preCounter + 1);
-    }
-
-    
-    
-  }
-  const Removevalue=() =>{
-    if(counter <= 0){
-
-      alert("Min value reached");
-
-    }
-    else(
-      setCounter(counter- 1));
-
+function ParentComponent() {
+  const message = "Hello, World!";
   
-  }
-  const Resetvalue=() =>{
-    setCounter(0);
-    
-  }
-  
-
   return (
-    <>
-    <h1>My first counter-app in react </h1>
-    <h3>Counter value = {counter}</h3>
-    <button onClick= {Addvalue} >Add value</button>
-    <button onClick={Removevalue}>Remove value</button>
-    <button onClick={Resetvalue}>Reset</button>
-
-
-        
-    
-     
-    </>
-  )
+    <div>
+      <ChildComponent greeting={message} />
+    </div>
+  );
 }
 
-export default App
+export default ParentComponent;
 ```
-* Hello
+In the above example, greeting is a prop passed to ChildComponent.
+## Accessing Props
+Props are accessed within a component using this.props in class components or directly as function arguments in functional components.
+
+*Functional Component
+```
+// ChildComponent.js
+import React from 'react';
+
+function ChildComponent({ greeting }) {
+  return <h1>{greeting}</h1>;
+}
+
+export default ChildComponent;
+
+```
+## Default Props
+Default props can be defined using the defaultProps property, ensuring that a component can render even if no props are passed.
+```
+ChildComponent.defaultProps = {
+  greeting: "Hello, Default World!"
+};
+
+```
+## Prop Types
+Prop types are used to specify the expected data types for props. This is achieved using the prop-types library, which helps in type-checking during development.
+
+```
+import PropTypes from 'prop-types';
+
+ChildComponent.propTypes = {
+  greeting: PropTypes.string
+};
+
+```
+
+
